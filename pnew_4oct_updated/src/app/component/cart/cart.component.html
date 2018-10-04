@@ -1,0 +1,33 @@
+<p>
+  cart works!
+</p>
+
+{{cartProds}}
+{{cartProds.sku}}
+
+ <div class="col-xs-12">
+  <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-3" *ngFor="let p of cartProds;let i-index">
+          <div class="card">
+              <img class="card-img-top" src="http://192.168.2.41/magento225/pub/media/catalog/product/{{p.custom_attributes[1].value}}"  alt="Card image cap">
+              <div class="card-body">
+                  <h4 class="card-title">
+                  <a  title="{{p.name}}" style="cursor: pointer;">{{p.name}}</a>
+                  </h4>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p><b>SKU :</b> {{p.sku}}</p>
+                  <!-- <p><b>created_at :</b> {{p.created_at}}</p> -->
+                  <!-- <p><b>updated_at :</b> {{p.updated_at}}</p> -->
+                   <div class="row">
+                      <div class="col">
+                          <p class="btn btn-danger btn-block">{{p.price}} $</p>
+                      </div>
+                      <div class="col">
+                          <a  class="btn btn-success btn-block" (click)="Cart(p)">Add to cart</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div> 
